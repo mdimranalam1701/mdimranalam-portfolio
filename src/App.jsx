@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt, FaCode, FaServer, FaTools, FaPhoneAlt, FaTimes, FaDownload } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt, FaCode, FaServer, FaTools, FaPhoneAlt, FaTimes, FaDownload, FaBars } from "react-icons/fa";
 import profilePic from "./faisal_profile.jpg";
 import resumePdf from "../resume/faisaladil_resume.pdf";
 
 export default function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const handleScroll = (id) => {
+    setIsMobileMenuOpen(false);
     const element = document.getElementById(id);
     if (element) element.scrollIntoView({ behavior: "smooth" });
   };
@@ -17,13 +20,16 @@ export default function App() {
         <h2 className="logo" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
           FAISAL<span className="accent">.dev</span>
         </h2>
-        <div className="nav-links">
+        <div className={`nav-links ${isMobileMenuOpen ? 'mobile-active' : ''}`}>
           <button onClick={() => handleScroll("about")} className="nav-btn">About</button>
           <button onClick={() => handleScroll("experience")} className="nav-btn">Experience</button>
           <button onClick={() => handleScroll("skills")} className="nav-btn">Skills</button>
           <button onClick={() => handleScroll("projects")} className="nav-btn">Projects</button>
-          <button onClick={() => setIsContactOpen(true)} className="cta-small" style={{ border: 'none', cursor: 'pointer' }}>Contact</button>
+          <button onClick={() => { setIsContactOpen(true); setIsMobileMenuOpen(false); }} className="cta-small" style={{ border: 'none', cursor: 'pointer' }}>Contact</button>
         </div>
+        <button className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </nav>
 
       {/* Hero Section */}
