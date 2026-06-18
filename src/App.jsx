@@ -137,7 +137,7 @@ export default function App() {
             </div>
           </div>
         </div>
-        
+
         {/* Achievements & Certifications */}
         <div className="skills-grid" style={{ marginTop: '20px' }}>
           <div className="skill-category" style={{ gridColumn: 'span 1' }}>
@@ -198,16 +198,16 @@ export default function App() {
               <span>React.js</span><span>Tailwind CSS</span><span>Node.js</span><span>Express</span><span>MongoDB</span>
             </div>
           </div>
-          
+
           {/* Project 3 */}
           <div className="project-card">
             <div className="project-header">
               <span className="proj-badge">Real-time App</span>
               <div style={{ display: 'flex', gap: '12px' }}>
-                <a href="https://github.com/mdimranalam1701" target="_blank" rel="noreferrer" className="proj-link" title="Source Code"><FaGithub /></a>
+                <a href="https://github.com/mdimranalam1701/SuperChats" target="_blank" rel="noreferrer" className="proj-link" title="Source Code"><FaGithub /></a>
               </div>
             </div>
-            <h3>WeChat Clone</h3>
+            <h3>SuperChat</h3>
             <p>
               A robust real-time communication application with instant messaging capabilities, secure user authentication, and responsive web design.
             </p>
@@ -237,7 +237,7 @@ export default function App() {
             </button>
             <h2>Get In Touch</h2>
             <p className="modal-subtitle">Feel free to reach out for collaborations or just a friendly chat.</p>
-            
+
             <div className="contact-links-grid">
               <a href="mailto:mdimran.alam1701@gmail.com" className="contact-item">
                 <div className="icon-wrapper mail-icon"><FaEnvelope /></div>
@@ -246,7 +246,7 @@ export default function App() {
                   <span className="contact-value">mdimran.alam1701@gmail.com</span>
                 </div>
               </a>
-              
+
               <a href="tel:+919330557542" className="contact-item">
                 <div className="icon-wrapper phone-icon"><FaPhoneAlt /></div>
                 <div className="contact-details">
@@ -262,7 +262,7 @@ export default function App() {
                   <span className="contact-value">mdimranalam1701</span>
                 </div>
               </a>
-              
+
               <a href="https://linkedin.com/in/mdimranalam1701" target="_blank" rel="noreferrer" className="contact-item">
                 <div className="icon-wrapper linkedin-icon" style={{ backgroundColor: '#0077B5', color: '#fff' }}><FaLinkedin /></div>
                 <div className="contact-details">
