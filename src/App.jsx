@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt, FaCode, FaServer, FaTools, FaPhoneAlt, FaTimes } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaExternalLinkAlt, FaCode, FaServer, FaTools, FaPhoneAlt, FaTimes, FaDownload } from "react-icons/fa";
 import profilePic from "./profile.jpg";
+import resumePdf from "../resume/Mdimranalam.pdf";
 
 export default function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -18,6 +19,7 @@ export default function App() {
         </h2>
         <div className="nav-links">
           <button onClick={() => handleScroll("about")} className="nav-btn">About</button>
+          <button onClick={() => handleScroll("experience")} className="nav-btn">Experience</button>
           <button onClick={() => handleScroll("skills")} className="nav-btn">Skills</button>
           <button onClick={() => handleScroll("projects")} className="nav-btn">Projects</button>
           <button onClick={() => setIsContactOpen(true)} className="cta-small" style={{ border: 'none', cursor: 'pointer' }}>Contact</button>
@@ -40,6 +42,9 @@ export default function App() {
             <button onClick={() => handleScroll("projects")} className="btn-primary">
               Explore My Work
             </button>
+            <a href={resumePdf} download="Mdimranalam.pdf" className="btn-secondary">
+              <FaDownload /> Download Resume
+            </a>
             <a href="https://github.com/mdimranalam1701" target="_blank" rel="noreferrer" className="btn-secondary">
               <FaGithub /> GitHub Profile
             </a>
@@ -70,13 +75,41 @@ export default function App() {
           </div>
           <div className="about-stats">
             <div className="stat-box">
-              <h3>92%</h3>
-              <p>Model Accuracy on Edge Devices</p>
+              <h3>B.Tech CSE</h3>
+              <p>Techno Int. Batanagar (2022-26)</p>
             </div>
             <div className="stat-box">
               <h3>7.74</h3>
-              <p>Engineering B.Tech CGPA</p>
+              <p>Engineering CGPA</p>
             </div>
+            <div className="stat-box">
+              <h3>92%</h3>
+              <p>Model Accuracy on Edge</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="experience-section">
+        <h2 className="section-title">Professional Experience</h2>
+        <div className="experience-timeline">
+          <div className="experience-card">
+            <div className="experience-header">
+              <div>
+                <h3 className="role-title">Full-Stack Developer</h3>
+                <p className="company-name">Million Tech Pvt. Ltd. | Kolkata</p>
+              </div>
+              <span className="experience-date">Apr 2026 - Present</span>
+            </div>
+            <ul className="experience-list">
+              <li><strong>Architected an Enterprise-Grade Backend:</strong> Designed and deployed a robust monolithic backend using Node.js, Express, and MongoDB, serving as the central API hub for a Super Admin dashboard (React/Next.js) and a customer-facing mobile app.</li>
+              <li><strong>Engineered a Multi-Step KYC Engine:</strong> Developed a secure, 4-step identity verification pipeline with universal document upload endpoints (multer, Cloudinary) to dynamically process and store driver's licenses, passports, and live selfies.</li>
+              <li><strong>Designed Scalable MVC Architecture:</strong> Enforced strict Controller-Service patterns handling complex multipart forms, ensuring clean business logic separation and transactional safety.</li>
+              <li><strong>Built Automated Notification Systems:</strong> Integrated Firebase Cloud Messaging (FCM) and SMS gateways to trigger real-time push notifications based on Admin dashboard actions.</li>
+              <li><strong>Developed Secure Admin Workflows:</strong> Created administrative endpoints for manual onboarding with automated duplicate detection and cryptographic invite-token creation.</li>
+              <li><strong>Implemented Robust Authentication:</strong> Built an end-to-end module supporting JWT sessions, role-based access control (Admin vs. Customer), and secure password reset workflows.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -88,19 +121,19 @@ export default function App() {
           <div className="skill-category">
             <div className="category-header"><FaCode /> Languages & Core</div>
             <div className="tags">
-              <span>JavaScript (ES6+)</span><span>Java</span><span>Python</span><span>SQL</span><span>Data Structures</span><span>OOPs</span>
+              <span>Java</span><span>JavaScript (ES6+)</span><span>Python</span><span>SQL</span><span>HTML</span><span>CSS</span><span>Data Structures & Algorithms</span><span>OOPs</span><span>DBMS</span><span>OS</span><span>Computer Networks</span>
             </div>
           </div>
           <div className="skill-category">
             <div className="category-header"><FaServer /> Backend & Databases</div>
             <div className="tags">
-              <span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>PostgreSQL</span><span>Redis</span><span>RESTful APIs</span>
+              <span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>PostgreSQL</span><span>MySQL</span><span>Redis</span><span>RESTful APIs</span><span>Microservices</span><span>gRPC</span><span>Kafka</span><span>RabbitMQ</span><span>Scala</span><span>Gin</span>
             </div>
           </div>
           <div className="skill-category">
             <div className="category-header"><FaTools /> DevOps & Frameworks</div>
             <div className="tags">
-              <span>React.js</span><span>Next.js</span><span>Docker</span><span>AWS</span><span>Git/GitHub</span><span>Postman</span>
+              <span>React.js</span><span>Next.js</span><span>Tailwind CSS</span><span>Docker</span><span>AWS</span><span>GCP</span><span>Azure</span><span>Kubernetes</span><span>CI/CD</span><span>Git/GitHub</span><span>Postman</span><span>Supabase</span><span>RAG</span>
             </div>
           </div>
         </div>
@@ -164,6 +197,33 @@ export default function App() {
             <div className="project-tags">
               <span>JavaScript</span><span>REST APIs</span><span>State Mgmt</span><span>Tailwind CSS</span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements & Certifications */}
+      <section id="achievements" className="achievements-section">
+        <h2 className="section-title">Achievements & Leadership</h2>
+        <div className="achievements-grid">
+          <div className="achievement-card">
+            <h3>TCS CodeVita Season 13</h3>
+            <p>Global Rank 2685 (2025)</p>
+          </div>
+          <div className="achievement-card">
+            <h3>Smart Bengal Hackathon</h3>
+            <p>Winner (2025)</p>
+          </div>
+          <div className="achievement-card">
+            <h3>Google Cloud</h3>
+            <p>AI & Intelligent Agents Certification (2025)</p>
+          </div>
+          <div className="achievement-card">
+            <h3>IBM SkillsBuild & CSRBOX</h3>
+            <p>Front-End & Web Dev Fundamentals (2025)</p>
+          </div>
+          <div className="achievement-card">
+            <h3>Coding Club Core Team</h3>
+            <p>Organized events for 100+ students (2023–25)</p>
           </div>
         </div>
       </section>
